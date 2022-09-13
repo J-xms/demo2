@@ -1,0 +1,1 @@
+adb shell am broadcast -a MY.ACTION_SCREEN_ON --es keyCode GET_SCREEN_BRIGHTNESS com.example.tvremote    
