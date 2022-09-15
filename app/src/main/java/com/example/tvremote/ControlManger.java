@@ -7,7 +7,7 @@ import android.provider.Settings;
 import android.util.Log;
 import android.widget.Toast;
 
-public class ControlManger {
+public class ControlManger { // 实现具体的功能逻辑
     /**
      * 获取屏幕亮度
      * @param context

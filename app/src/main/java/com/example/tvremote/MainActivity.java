@@ -7,6 +7,12 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
+/**
+ * 此部分调试用
+ * 因为调试过程中，可能需要申请一些权限，只能手动点击弹窗确认
+ * 所以需要一个可视化的用户界面来完成权限申请
+ * 比如打开/关闭扬声器的功能的接口的权限
+ */
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -24,5 +30,14 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("MainActivity" , "start ControlService");
             }
         });
+    }
+
+    public void t(){
+        // 发一个自定义广播
+        Intent intent = new Intent();
+        intent.setAction("MY.ACTION_SCREEN_ON"); // 设置发送的是什么广播，action就是广播的标记ID
+        intent.putExtra("keyCode", KeyCode.GET_SCREEN_BRIGHTNESS); // key-value 设置广播携带的内容
+        intent.putExtra("key2",KeyCode.GET_SCREEN_BS );
+        sendBroadcast(intent);
     }
 }

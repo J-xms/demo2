@@ -6,6 +6,14 @@ import android.content.IntentFilter;
 import android.os.IBinder;
 import android.util.Log;
 
+/**
+ * 用于注册动态广播
+ * 设置要接收的广播列表
+ * 用到终端的哪些系统广播，就在这里注册
+ * 由于有些系统广播需要权限（或不方便触发）
+ * 所以我们选择使用自定义广播的方式调试功能
+ */
+
 public class ControlService extends Service {
     private ControlHandler.xReceiver xReceiver;
     public ControlService() {
@@ -22,7 +30,7 @@ public class ControlService extends Service {
         // 可以同时设置多个action
         intentFilter.addAction(Intent.ACTION_SCREEN_ON); // 屏幕被打开时，系统会发送该广播
         intentFilter.addAction(Intent.ACTION_SCREEN_OFF); // 屏幕被关闭时，系统会发送该广播
-        intentFilter.addAction("MY.ACTION_SCREEN_ON"); // 模拟屏幕被打开时，系统会发送该广播
+        intentFilter.addAction("MY.ACTION_SCREEN_ON"); // 模拟屏幕被打开时，系统会发送该广播（自定义广播）
 //        controlReceiver = new ControlReceiver();
         xReceiver = new ControlHandler.xReceiver();
         registerReceiver(xReceiver, intentFilter);
