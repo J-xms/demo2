@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     public void t(){
         // 发一个自定义广播
         Intent intent = new Intent();
+        // intent 就是一个消息载体，包含很多属性信息。我们现在主要用到action 和 extra 这两个属性
         intent.setAction("MY.ACTION_SCREEN_ON"); // 设置发送的是什么广播，action就是广播的标记ID
         intent.putExtra("keyCode", KeyCode.GET_SCREEN_BRIGHTNESS); // key-value 设置广播携带的内容
         intent.putExtra("key2",KeyCode.GET_SCREEN_BS );
