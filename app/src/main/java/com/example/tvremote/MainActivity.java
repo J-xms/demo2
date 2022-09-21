@@ -1,5 +1,7 @@
 package com.example.tvremote;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 import android.view.View;
@@ -14,7 +16,6 @@ import android.os.Bundle;
  * 比如打开/关闭扬声器的功能的接口的权限
  */
 public class MainActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("MainActivity" , "start ControlService");
             }
         });
+
     }
 
     public void t(){
